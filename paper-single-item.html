@@ -1,0 +1,64 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-collapse/iron-collapse.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../paper-item/paper-item-body.html">
+<link rel="import" href="../paper-styles/paper-styles.html">
+
+<dom-module id='paper-single-item'>
+
+	<template>
+
+		<style>
+			.header {
+				min-height: 48px;
+				color: var(--primary-text-color);
+				@apply(--layout-horizontal);
+				@apply(--layout-center-center);
+				@apply(--paper-font-subhead);
+			}
+
+			.header a {
+				@apply(--paper-font-subhead);
+			}
+
+			.icon {
+				margin-right: 24px;
+				--iron-icon-height: 32px;
+				--iron-icon-width: 32px;
+			}
+
+			.icon {
+				color: var(--disabled-text-color);
+			}
+		</style>
+
+		<paper-item>
+			<paper-item-body>
+				<div class="header">
+					<iron-icon class='icon' icon=[[icon]]></iron-icon>
+					<div class="flex"><content></content></div>
+				</div>
+			</paper-item-body>
+		</paper-item>
+
+	</template>
+</dom-module>
+
+<script>
+
+(function() {
+
+	Polymer({
+		is: 'paper-single-item',
+		properties: {
+			header: String,
+			icon: String
+		}
+	});
+
+})();
+
+</script>
