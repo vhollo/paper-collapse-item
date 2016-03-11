@@ -38,18 +38,19 @@ A Material Design [item with header and collapsible content](https://www.google.
 				@apply(--layout-horizontal);
 				@apply(--layout-center-center);
 				@apply(--paper-font-subhead);
+				cursor:pointer;
 			}
-			
+
 			.icon {
 				margin-right: 24px;
 				--iron-icon-height: 32px;
 				--iron-icon-width: 32px;
 			}
-		
+
 			.icon,.toogle {
 				color: var(--disabled-text-color);
 			}
-						
+
 			.content {
 				color: var(--primary-text-color);
 				@apply(--paper-font-body1);
@@ -84,17 +85,17 @@ A Material Design [item with header and collapsible content](https://www.google.
 			 * Text in the header row
 			 */
 			header: String,
-			
+
 			/**
 			 * Icon that is shown in the header row
 			 */
 			icon: String,
-			
+
 			/**
 			 * True if the content section is opened
 			 */
 			opened: Boolean,
-			
+
 			_toggleIcon: {
 				type: String,
 				computed: '_computeToggleIcon(opened)'
@@ -103,6 +104,7 @@ A Material Design [item with header and collapsible content](https://www.google.
 
 		// Private methods
 		_toggleOpened: function(e) {
+			this.parentNode.childNodes.opened = false;
 			this.opened = !this.opened;
 		},
 		_computeToggleIcon: function(opened) {
